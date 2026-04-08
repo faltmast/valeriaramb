@@ -1,11 +1,649 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valeria Ramb</title>
+    <title>Valeria Ramb — Structural Engineering</title>
+    <meta name="description" content="Valeria Ramb Structural Engineering — Big picture thinking for infrastructure projects in Brazil. We zoom out to see what others miss. We zoom in so nothing goes wrong.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="nav" id="nav">
+        <div class="nav__container">
+            <a href="#hero" class="nav__logo">
+                <span class="nav__logo-mark">VR</span>
+                <span class="nav__logo-text">Valeria Ramb</span>
+            </a>
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav__menu" id="navMenu">
+                <ul class="nav__list">
+                    <li><a href="#about" class="nav__link" data-en="About" data-pt="Sobre">About</a></li>
+                    <li><a href="#why" class="nav__link" data-en="Why Structural" data-pt="Por Que Estrutural">Why Structural</a></li>
+                    <li><a href="#approach" class="nav__link" data-en="Our Approach" data-pt="Nossa Abordagem">Our Approach</a></li>
+                    <li><a href="#projects" class="nav__link" data-en="Projects" data-pt="Projetos">Projects</a></li>
+                    <li><a href="#checklist" class="nav__link" data-en="Start Your Project" data-pt="Inicie Seu Projeto">Start Your Project</a></li>
+                    <li><a href="#contact" class="nav__link nav__link--cta" data-en="Contact" data-pt="Contato">Contact</a></li>
+                </ul>
+            </div>
+            <button class="nav__lang" id="langToggle" aria-label="Toggle language">
+                <span class="nav__lang-option nav__lang-option--active" data-value="en">EN</span>
+                <span class="nav__lang-divider">/</span>
+                <span class="nav__lang-option" data-value="pt">PT</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+        <div class="hero__bg-shapes">
+            <svg class="hero__shape hero__shape--1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="100,10 190,60 190,140 100,190 10,140 10,60" fill="none" stroke="currentColor" stroke-width="0.5"/>
+            </svg>
+            <svg class="hero__shape hero__shape--2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="0.3"/>
+                <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="0.3"/>
+                <circle cx="50" cy="50" r="15" fill="none" stroke="currentColor" stroke-width="0.3"/>
+            </svg>
+            <svg class="hero__shape hero__shape--3" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="0" x2="200" y2="200" stroke="currentColor" stroke-width="0.3"/>
+                <line x1="200" y1="0" x2="0" y2="200" stroke="currentColor" stroke-width="0.3"/>
+                <line x1="100" y1="0" x2="100" y2="200" stroke="currentColor" stroke-width="0.3"/>
+                <line x1="0" y1="100" x2="200" y2="100" stroke="currentColor" stroke-width="0.3"/>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="hero__content fade-in">
+                <p class="hero__label" data-en="Structural Engineering" data-pt="Engenharia Estrutural">Structural Engineering</p>
+                <h1 class="hero__title">
+                    <span data-en="We zoom out to see" data-pt="Ampliamos a vis&atilde;o para ver">We zoom out to see</span><br>
+                    <span class="hero__title--accent" data-en="what others miss." data-pt="o que outros n&atilde;o veem.">what others miss.</span><br>
+                    <span data-en="We zoom in so" data-pt="Aproximamos o olhar para que">We zoom in so</span><br>
+                    <span class="hero__title--accent" data-en="nothing goes wrong." data-pt="nada d&ecirc; errado.">nothing goes wrong.</span>
+                </h1>
+                <p class="hero__subtitle" data-en="Structural engineering with big-picture thinking. From S&atilde;o Paulo to the world &mdash; we bring detail, ownership, and deadline discipline to every project we touch." data-pt="Engenharia estrutural com vis&atilde;o ampla. De S&atilde;o Paulo para o mundo &mdash; trazemos detalhamento, responsabilidade e disciplina de prazos a cada projeto.">Structural engineering with big-picture thinking. From S&atilde;o Paulo to the world &mdash; we bring detail, ownership, and deadline discipline to every project we touch.</p>
+                <div class="hero__actions">
+                    <a href="#contact" class="btn btn--primary" data-en="Start a Conversation" data-pt="Inicie uma Conversa">Start a Conversation</a>
+                    <a href="#approach" class="btn btn--outline" data-en="Our Approach" data-pt="Nossa Abordagem">Our Approach</a>
+                </div>
+            </div>
+            <div class="hero__visual fade-in">
+                <svg class="hero__blueprint" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Structural grid -->
+                    <g class="hero__blueprint-grid" stroke="currentColor" stroke-width="0.5" opacity="0.3">
+                        <line x1="50" y1="50" x2="50" y2="350"/>
+                        <line x1="130" y1="50" x2="130" y2="350"/>
+                        <line x1="210" y1="50" x2="210" y2="350"/>
+                        <line x1="290" y1="50" x2="290" y2="350"/>
+                        <line x1="370" y1="50" x2="370" y2="350"/>
+                        <line x1="50" y1="50" x2="370" y2="50"/>
+                        <line x1="50" y1="130" x2="370" y2="130"/>
+                        <line x1="50" y1="210" x2="370" y2="210"/>
+                        <line x1="50" y1="290" x2="370" y2="290"/>
+                        <line x1="50" y1="350" x2="370" y2="350"/>
+                    </g>
+                    <!-- Beam structure -->
+                    <g stroke="currentColor" stroke-width="1.5" fill="none">
+                        <rect x="80" y="100" width="260" height="200" rx="2" opacity="0.6"/>
+                        <line x1="80" y1="200" x2="340" y2="200" opacity="0.4"/>
+                        <line x1="210" y1="100" x2="210" y2="300" opacity="0.4"/>
+                        <!-- Diagonal bracing -->
+                        <line x1="80" y1="100" x2="210" y2="200" opacity="0.2"/>
+                        <line x1="210" y1="100" x2="340" y2="200" opacity="0.2"/>
+                        <line x1="80" y1="200" x2="210" y2="300" opacity="0.2"/>
+                        <line x1="210" y1="200" x2="340" y2="300" opacity="0.2"/>
+                    </g>
+                    <!-- Accent nodes -->
+                    <g fill="#d4a853">
+                        <circle cx="80" cy="100" r="4"/>
+                        <circle cx="210" cy="100" r="4"/>
+                        <circle cx="340" cy="100" r="4"/>
+                        <circle cx="80" cy="200" r="4"/>
+                        <circle cx="210" cy="200" r="6"/>
+                        <circle cx="340" cy="200" r="4"/>
+                        <circle cx="80" cy="300" r="4"/>
+                        <circle cx="210" cy="300" r="4"/>
+                        <circle cx="340" cy="300" r="4"/>
+                    </g>
+                    <!-- Zoom rings -->
+                    <circle cx="210" cy="200" r="50" fill="none" stroke="#4a90d9" stroke-width="1" stroke-dasharray="4 4" class="hero__zoom-ring hero__zoom-ring--1"/>
+                    <circle cx="210" cy="200" r="90" fill="none" stroke="#4a90d9" stroke-width="0.5" stroke-dasharray="6 6" class="hero__zoom-ring hero__zoom-ring--2"/>
+                    <circle cx="210" cy="200" r="140" fill="none" stroke="#4a90d9" stroke-width="0.3" stroke-dasharray="8 8" class="hero__zoom-ring hero__zoom-ring--3"/>
+                </svg>
+            </div>
+        </div>
+        <div class="hero__scroll-indicator">
+            <span data-en="Scroll to explore" data-pt="Role para explorar">Scroll to explore</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section__header fade-in">
+                <p class="section__label" data-en="Who We Are" data-pt="Quem Somos">Who We Are</p>
+                <h2 class="section__title" data-en="Two minds, one mission." data-pt="Duas mentes, uma miss&atilde;o.">Two minds, one mission.</h2>
+                <p class="section__subtitle" data-en="A complementary team built on shared discipline and different strengths." data-pt="Uma equipe complementar constru&iacute;da sobre disciplina compartilhada e for&ccedil;as diferentes.">A complementary team built on shared discipline and different strengths.</p>
+            </div>
+            <div class="about__team">
+                <div class="about__member fade-in">
+                    <div class="about__avatar">
+                        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="120" height="120" rx="8" fill="#1a2744"/>
+                            <circle cx="60" cy="45" r="20" fill="none" stroke="#4a90d9" stroke-width="1.5"/>
+                            <path d="M30 100 Q60 70 90 100" fill="none" stroke="#4a90d9" stroke-width="1.5"/>
+                            <text x="60" y="115" text-anchor="middle" fill="#d4a853" font-size="10" font-family="Space Grotesk">V</text>
+                        </svg>
+                    </div>
+                    <h3 class="about__name">Valeria Ramb</h3>
+                    <p class="about__role" data-en="Founder &amp; Lead Structural Engineer" data-pt="Fundadora &amp; Engenheira Estrutural L&iacute;der">Founder &amp; Lead Structural Engineer</p>
+                    <p class="about__bio" data-en="With over a decade of experience in structural engineering across Brazil, Valeria brings an unmatched eye for detail and a deep commitment to understanding the full scope of every project. She leads with both precision and care &mdash; ensuring structures are not just safe, but built to last. Her approach combines rigorous technical analysis with genuine concern for the people who will use every building she engineers." data-pt="Com mais de uma d&eacute;cada de experi&ecirc;ncia em engenharia estrutural no Brasil, Valeria traz um olhar incompar&aacute;vel para detalhes e um compromisso profundo com a compreens&atilde;o completa de cada projeto. Ela lidera com precis&atilde;o e cuidado &mdash; garantindo que estruturas n&atilde;o sejam apenas seguras, mas constru&iacute;das para durar. Sua abordagem combina an&aacute;lise t&eacute;cnica rigorosa com genui&iacute;na preocupa&ccedil;&atilde;o pelas pessoas que usar&atilde;o cada edif&iacute;cio que ela projeta.">With over a decade of experience in structural engineering across Brazil, Valeria brings an unmatched eye for detail and a deep commitment to understanding the full scope of every project. She leads with both precision and care &mdash; ensuring structures are not just safe, but built to last. Her approach combines rigorous technical analysis with genuine concern for the people who will use every building she engineers.</p>
+                </div>
+                <div class="about__divider">
+                    <svg viewBox="0 0 2 100" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="1" y1="0" x2="1" y2="100" stroke="#2d4a7a" stroke-width="1" stroke-dasharray="4 4"/>
+                    </svg>
+                </div>
+                <div class="about__member fade-in">
+                    <div class="about__avatar">
+                        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="120" height="120" rx="8" fill="#1a2744"/>
+                            <circle cx="60" cy="45" r="20" fill="none" stroke="#4a90d9" stroke-width="1.5"/>
+                            <path d="M30 100 Q60 70 90 100" fill="none" stroke="#4a90d9" stroke-width="1.5"/>
+                            <text x="60" y="115" text-anchor="middle" fill="#d4a853" font-size="10" font-family="Space Grotesk">S</text>
+                        </svg>
+                    </div>
+                    <h3 class="about__name">Sergio Ramb</h3>
+                    <p class="about__role" data-en="Co-founder &amp; Project Director" data-pt="Cofundador &amp; Diretor de Projetos">Co-founder &amp; Project Director</p>
+                    <p class="about__bio" data-en="Sergio anchors the operational side of every engagement. With deep experience in project coordination and construction management, he ensures that timelines hold, communication stays clear, and no detail falls through the cracks. Where Valeria sees the structure, Sergio sees the schedule &mdash; and together, they deliver projects that are technically sound and delivered on time." data-pt="Sergio ancora o lado operacional de cada projeto. Com profunda experi&ecirc;ncia em coordena&ccedil;&atilde;o de projetos e gest&atilde;o de obras, ele garante que cronogramas sejam cumpridos, a comunica&ccedil;&atilde;o permane&ccedil;a clara e nenhum detalhe passe despercebido. Onde Valeria v&ecirc; a estrutura, Sergio v&ecirc; o cronograma &mdash; e juntos, entregam projetos tecnicamente s&oacute;lidos e dentro do prazo.">Sergio anchors the operational side of every engagement. With deep experience in project coordination and construction management, he ensures that timelines hold, communication stays clear, and no detail falls through the cracks. Where Valeria sees the structure, Sergio sees the schedule &mdash; and together, they deliver projects that are technically sound and delivered on time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WHY STRUCTURAL ========== -->
+    <section class="section why" id="why">
+        <div class="container">
+            <div class="section__header fade-in">
+                <p class="section__label" data-en="Understanding the Role" data-pt="Entendendo o Papel">Understanding the Role</p>
+                <h2 class="section__title" data-en="Why structural engineering matters." data-pt="Por que engenharia estrutural importa.">Why structural engineering matters.</h2>
+                <p class="section__subtitle" data-en="Every building stands on decisions made by a structural engineer. Here is what that really means." data-pt="Todo edif&iacute;cio se sustenta em decis&otilde;es feitas por um engenheiro estrutural. Veja o que isso realmente significa.">Every building stands on decisions made by a structural engineer. Here is what that really means.</p>
+            </div>
+            <div class="why__grid">
+                <div class="why__card fade-in">
+                    <div class="why__icon">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="24" width="48" height="32" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                            <line x1="8" y1="40" x2="56" y2="40" stroke="currentColor" stroke-width="1"/>
+                            <line x1="24" y1="24" x2="24" y2="56" stroke="currentColor" stroke-width="1"/>
+                            <line x1="40" y1="24" x2="40" y2="56" stroke="currentColor" stroke-width="1"/>
+                            <polygon points="32,8 56,24 8,24" fill="none" stroke="#d4a853" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="why__card-title" data-en="What we do" data-pt="O que fazemos">What we do</h3>
+                    <p class="why__card-text" data-en="A structural engineer designs the skeleton of a building &mdash; the beams, columns, slabs, and foundations that hold everything together. We calculate loads, analyze forces, and determine the exact dimensions and materials needed so that a structure can safely support itself, its occupants, and the forces of nature." data-pt="Um engenheiro estrutural projeta o esqueleto de um edif&iacute;cio &mdash; as vigas, pilares, lajes e funda&ccedil;&otilde;es que mant&ecirc;m tudo unido. Calculamos cargas, analisamos for&ccedil;as e determinamos as dimens&otilde;es e materiais exatos para que uma estrutura possa suportar com seguran&ccedil;a a si mesma, seus ocupantes e as for&ccedil;as da natureza.">A structural engineer designs the skeleton of a building &mdash; the beams, columns, slabs, and foundations that hold everything together. We calculate loads, analyze forces, and determine the exact dimensions and materials needed so that a structure can safely support itself, its occupants, and the forces of nature.</p>
+                </div>
+                <div class="why__card fade-in">
+                    <div class="why__icon">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="24" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M32 8 L32 56" stroke="currentColor" stroke-width="1"/>
+                            <path d="M8 32 L56 32" stroke="currentColor" stroke-width="1"/>
+                            <circle cx="32" cy="32" r="8" fill="#d4a853" opacity="0.3"/>
+                            <path d="M20 20 L44 44" stroke="#d4a853" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="why__card-title" data-en="Why it matters" data-pt="Por que importa">Why it matters</h3>
+                    <p class="why__card-text" data-en="Architecture gives a building its shape. Structural engineering gives it the ability to stand. Without proper structural design, even the most beautiful building is a liability &mdash; prone to cracking, settling, or worse. Good structural engineering is invisible when done right, but catastrophic when done wrong." data-pt="A arquitetura d&aacute; forma ao edif&iacute;cio. A engenharia estrutural d&aacute; a ele a capacidade de ficar de p&eacute;. Sem projeto estrutural adequado, mesmo o edif&iacute;cio mais bonito &eacute; um risco &mdash; sujeito a fissuras, recalques ou pior. Boa engenharia estrutural &eacute; invis&iacute;vel quando feita corretamente, mas catastr&oacute;fica quando feita errado.">Architecture gives a building its shape. Structural engineering gives it the ability to stand. Without proper structural design, even the most beautiful building is a liability &mdash; prone to cracking, settling, or worse. Good structural engineering is invisible when done right, but catastrophic when done wrong.</p>
+                </div>
+                <div class="why__card fade-in">
+                    <div class="why__icon">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 52 L32 12 L52 52 Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                            <line x1="32" y1="28" x2="32" y2="40" stroke="#d4a853" stroke-width="2"/>
+                            <circle cx="32" cy="46" r="2" fill="#d4a853"/>
+                        </svg>
+                    </div>
+                    <h3 class="why__card-title" data-en="What happens without one" data-pt="O que acontece sem um">What happens without one</h3>
+                    <p class="why__card-text" data-en="Skipping or undervaluing structural engineering leads to cost overruns, unsafe conditions, project delays, and regulatory failures. Cracks appear. Foundations shift. Permits get denied. In the worst cases, structures fail &mdash; putting lives at risk. Investing in structural engineering from day one is not an expense. It is insurance." data-pt="Ignorar ou subestimar a engenharia estrutural leva a estouros de or&ccedil;amento, condi&ccedil;&otilde;es inseguras, atrasos e falhas regulat&oacute;rias. Trincas aparecem. Funda&ccedil;&otilde;es cedem. Alvar&aacute;s s&atilde;o negados. Nos piores casos, estruturas falham &mdash; colocando vidas em risco. Investir em engenharia estrutural desde o primeiro dia n&atilde;o &eacute; um gasto. &Eacute; um seguro.">Skipping or undervaluing structural engineering leads to cost overruns, unsafe conditions, project delays, and regulatory failures. Cracks appear. Foundations shift. Permits get denied. In the worst cases, structures fail &mdash; putting lives at risk. Investing in structural engineering from day one is not an expense. It is insurance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== OUR APPROACH ========== -->
+    <section class="section approach" id="approach">
+        <div class="container">
+            <div class="section__header fade-in">
+                <p class="section__label" data-en="How We Work" data-pt="Como Trabalhamos">How We Work</p>
+                <h2 class="section__title" data-en="Our approach: warm precision." data-pt="Nossa abordagem: precis&atilde;o com calor humano.">Our approach: warm precision.</h2>
+                <p class="section__subtitle" data-en="We zoom out to see the full picture. We zoom in so nothing goes wrong. This is how we do it." data-pt="Ampliamos a vis&atilde;o para ver o quadro completo. Aproximamos o olhar para que nada d&ecirc; errado. &Eacute; assim que fazemos.">We zoom out to see the full picture. We zoom in so nothing goes wrong. This is how we do it.</p>
+            </div>
+            <div class="approach__values">
+                <div class="approach__value fade-in">
+                    <div class="approach__number">01</div>
+                    <div class="approach__content">
+                        <h3 class="approach__value-title" data-en="Full Ownership" data-pt="Responsabilidade Total">Full Ownership</h3>
+                        <p class="approach__value-text" data-en="When we take on a project, it becomes ours. We do not hand off responsibility or point fingers. From the first calculation to the final inspection, we own every decision, every drawing, every detail. Your project is in our hands &mdash; and we treat it like our own." data-pt="Quando assumimos um projeto, ele se torna nosso. N&atilde;o transferimos responsabilidade nem apontamos culpados. Do primeiro c&aacute;lculo &agrave; inspe&ccedil;&atilde;o final, assumimos cada decis&atilde;o, cada desenho, cada detalhe. Seu projeto est&aacute; em nossas m&atilde;os &mdash; e o tratamos como nosso.">When we take on a project, it becomes ours. We do not hand off responsibility or point fingers. From the first calculation to the final inspection, we own every decision, every drawing, every detail. Your project is in our hands &mdash; and we treat it like our own.</p>
+                    </div>
+                </div>
+                <div class="approach__value fade-in">
+                    <div class="approach__number">02</div>
+                    <div class="approach__content">
+                        <h3 class="approach__value-title" data-en="Deep Involvement" data-pt="Envolvimento Profundo">Deep Involvement</h3>
+                        <p class="approach__value-text" data-en="We do not work from a distance. We immerse ourselves in the project &mdash; understanding the site, the soil, the architecture, the contractor's workflow, and the client's goals. We ask the questions others skip. We study the data others skim. This depth is what separates adequate engineering from exceptional engineering." data-pt="N&atilde;o trabalhamos &agrave; dist&acirc;ncia. Nos imersos no projeto &mdash; entendendo o terreno, o solo, a arquitetura, o fluxo de trabalho do construtor e os objetivos do cliente. Fazemos as perguntas que outros pulam. Estudamos os dados que outros apenas folheiam. Essa profundidade &eacute; o que separa engenharia adequada de engenharia excepcional.">We do not work from a distance. We immerse ourselves in the project &mdash; understanding the site, the soil, the architecture, the contractor's workflow, and the client's goals. We ask the questions others skip. We study the data others skim. This depth is what separates adequate engineering from exceptional engineering.</p>
+                    </div>
+                </div>
+                <div class="approach__value fade-in">
+                    <div class="approach__number">03</div>
+                    <div class="approach__content">
+                        <h3 class="approach__value-title" data-en="Relentless Detail" data-pt="Detalhamento Incans&aacute;vel">Relentless Detail</h3>
+                        <p class="approach__value-text" data-en="Every dimension is verified. Every connection is analyzed. Every load path is traced to the foundation. We believe that excellence lives in the details &mdash; and that the difference between a structure that merely stands and one that endures is measured in millimeters and margin checks." data-pt="Cada dimens&atilde;o &eacute; verificada. Cada conex&atilde;o &eacute; analisada. Cada caminho de carga &eacute; tra&ccedil;ado at&eacute; a funda&ccedil;&atilde;o. Acreditamos que a excel&ecirc;ncia vive nos detalhes &mdash; e que a diferen&ccedil;a entre uma estrutura que apenas fica de p&eacute; e uma que perdura se mede em mil&iacute;metros e verifica&ccedil;&otilde;es de margem.">Every dimension is verified. Every connection is analyzed. Every load path is traced to the foundation. We believe that excellence lives in the details &mdash; and that the difference between a structure that merely stands and one that endures is measured in millimeters and margin checks.</p>
+                    </div>
+                </div>
+                <div class="approach__value fade-in">
+                    <div class="approach__number">04</div>
+                    <div class="approach__content">
+                        <h3 class="approach__value-title" data-en="Deadline Discipline" data-pt="Disciplina de Prazos">Deadline Discipline</h3>
+                        <p class="approach__value-text" data-en="In construction, time is money &mdash; literally. Delays cascade. We plan our deliverables around your schedule, not ours. When we commit to a date, we deliver. Period. Our clients never have to chase us for updates, because we communicate proactively and plan for the unexpected." data-pt="Na constru&ccedil;&atilde;o, tempo &eacute; dinheiro &mdash; literalmente. Atrasos se acumulam. Planejamos nossas entregas em torno do seu cronograma, n&atilde;o do nosso. Quando nos comprometemos com uma data, entregamos. Ponto. Nossos clientes nunca precisam nos cobrar por atualiza&ccedil;&otilde;es, porque nos comunicamos proativamente e planejamos para o inesperado.">In construction, time is money &mdash; literally. Delays cascade. We plan our deliverables around your schedule, not ours. When we commit to a date, we deliver. Period. Our clients never have to chase us for updates, because we communicate proactively and plan for the unexpected.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process visual -->
+            <div class="approach__process fade-in">
+                <h3 class="approach__process-title" data-en="Our Process" data-pt="Nosso Processo">Our Process</h3>
+                <div class="approach__steps">
+                    <div class="approach__step">
+                        <div class="approach__step-icon">
+                            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="24" cy="24" r="20" fill="none" stroke="#4a90d9" stroke-width="1.5"/>
+                                <circle cx="24" cy="24" r="12" fill="none" stroke="#d4a853" stroke-width="1"/>
+                                <circle cx="24" cy="24" r="4" fill="#d4a853"/>
+                            </svg>
+                        </div>
+                        <p class="approach__step-label" data-en="Understand" data-pt="Entender">Understand</p>
+                        <p class="approach__step-desc" data-en="We study the full context: site, soil, architecture, and your goals." data-pt="Estudamos o contexto completo: terreno, solo, arquitetura e seus objetivos.">We study the full context: site, soil, architecture, and your goals.</p>
+                    </div>
+                    <div class="approach__step-connector">
+                        <svg viewBox="0 0 60 8" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="0" y1="4" x2="52" y2="4" stroke="#2d4a7a" stroke-width="1" stroke-dasharray="4 4"/>
+                            <polygon points="52,0 60,4 52,8" fill="#4a90d9"/>
+                        </svg>
+                    </div>
+                    <div class="approach__step">
+                        <div class="approach__step-icon">
+                            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="8" width="32" height="32" rx="2" fill="none" stroke="#4a90d9" stroke-width="1.5"/>
+                                <line x1="8" y1="20" x2="40" y2="20" stroke="#4a90d9" stroke-width="1"/>
+                                <line x1="20" y1="8" x2="20" y2="40" stroke="#4a90d9" stroke-width="1"/>
+                                <rect x="22" y="22" width="16" height="16" fill="#d4a853" opacity="0.2"/>
+                            </svg>
+                        </div>
+                        <p class="approach__step-label" data-en="Design" data-pt="Projetar">Design</p>
+                        <p class="approach__step-desc" data-en="We engineer the structural solution with precision and safety margins." data-pt="Projetamos a solu&ccedil;&atilde;o estrutural com precis&atilde;o e margens de seguran&ccedil;a.">We engineer the structural solution with precision and safety margins.</p>
+                    </div>
+                    <div class="approach__step-connector">
+                        <svg viewBox="0 0 60 8" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="0" y1="4" x2="52" y2="4" stroke="#2d4a7a" stroke-width="1" stroke-dasharray="4 4"/>
+                            <polygon points="52,0 60,4 52,8" fill="#4a90d9"/>
+                        </svg>
+                    </div>
+                    <div class="approach__step">
+                        <div class="approach__step-icon">
+                            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 40 L24 8 L40 40 Z" fill="none" stroke="#4a90d9" stroke-width="1.5"/>
+                                <line x1="16" y1="28" x2="32" y2="28" stroke="#d4a853" stroke-width="1.5"/>
+                                <circle cx="24" cy="20" r="3" fill="#d4a853"/>
+                            </svg>
+                        </div>
+                        <p class="approach__step-label" data-en="Validate" data-pt="Validar">Validate</p>
+                        <p class="approach__step-desc" data-en="Every calculation is cross-checked. Every detail is reviewed." data-pt="Cada c&aacute;lculo &eacute; verificado. Cada detalhe &eacute; revisado.">Every calculation is cross-checked. Every detail is reviewed.</p>
+                    </div>
+                    <div class="approach__step-connector">
+                        <svg viewBox="0 0 60 8" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="0" y1="4" x2="52" y2="4" stroke="#2d4a7a" stroke-width="1" stroke-dasharray="4 4"/>
+                            <polygon points="52,0 60,4 52,8" fill="#4a90d9"/>
+                        </svg>
+                    </div>
+                    <div class="approach__step">
+                        <div class="approach__step-icon">
+                            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="24" cy="24" r="18" fill="none" stroke="#4a90d9" stroke-width="1.5"/>
+                                <path d="M16 24 L22 30 L34 18" stroke="#d4a853" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                        <p class="approach__step-label" data-en="Deliver" data-pt="Entregar">Deliver</p>
+                        <p class="approach__step-desc" data-en="On time, fully documented, ready for construction." data-pt="No prazo, totalmente documentado, pronto para constru&ccedil;&atilde;o.">On time, fully documented, ready for construction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <div class="section__header fade-in">
+                <p class="section__label" data-en="Selected Work" data-pt="Trabalhos Selecionados">Selected Work</p>
+                <h2 class="section__title" data-en="Projects that stand." data-pt="Projetos que ficam de p&eacute;.">Projects that stand.</h2>
+                <p class="section__subtitle" data-en="A selection of infrastructure and building projects across Brazil." data-pt="Uma sele&ccedil;&atilde;o de projetos de infraestrutura e edifica&ccedil;&otilde;es pelo Brasil.">A selection of infrastructure and building projects across Brazil.</p>
+            </div>
+            <div class="projects__grid">
+                <div class="projects__card fade-in">
+                    <div class="projects__image">
+                        <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="260" fill="#1a2744"/>
+                            <g stroke="#2d4a7a" stroke-width="0.5" opacity="0.5">
+                                <line x1="0" y1="130" x2="400" y2="130"/>
+                                <line x1="200" y1="0" x2="200" y2="260"/>
+                            </g>
+                            <rect x="120" y="80" width="160" height="100" rx="2" fill="none" stroke="#4a90d9" stroke-width="1"/>
+                            <line x1="120" y1="130" x2="280" y2="130" stroke="#4a90d9" stroke-width="0.5"/>
+                            <line x1="200" y1="80" x2="200" y2="180" stroke="#4a90d9" stroke-width="0.5"/>
+                            <circle cx="200" cy="130" r="4" fill="#d4a853"/>
+                            <text x="200" y="220" text-anchor="middle" fill="#4a90d9" font-size="11" font-family="Space Grotesk" data-en="Photo Placeholder" data-pt="Espa&ccedil;o para Foto">Photo Placeholder</text>
+                        </svg>
+                    </div>
+                    <div class="projects__info">
+                        <h3 class="projects__name" data-en="Commercial Tower Alpha" data-pt="Torre Comercial Alpha">Commercial Tower Alpha</h3>
+                        <div class="projects__meta">
+                            <span class="projects__type" data-en="Commercial" data-pt="Comercial">Commercial</span>
+                            <span class="projects__location" data-en="S&atilde;o Paulo, SP" data-pt="S&atilde;o Paulo, SP">S&atilde;o Paulo, SP</span>
+                        </div>
+                        <p class="projects__challenge"><strong data-en="Challenge:" data-pt="Desafio:">Challenge:</strong> <span data-en="Complex foundation design on expansive clay soil with high water table." data-pt="Projeto complexo de funda&ccedil;&atilde;o em solo argiloso expans&iacute;vel com len&ccedil;ol fre&aacute;tico elevado.">Complex foundation design on expansive clay soil with high water table.</span></p>
+                        <p class="projects__result"><strong data-en="Result:" data-pt="Resultado:">Result:</strong> <span data-en="Delivered 2 weeks ahead of schedule with 15% material optimization." data-pt="Entregue 2 semanas antes do prazo com 15% de otimiza&ccedil;&atilde;o de materiais.">Delivered 2 weeks ahead of schedule with 15% material optimization.</span></p>
+                    </div>
+                </div>
+                <div class="projects__card fade-in">
+                    <div class="projects__image">
+                        <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="260" fill="#1a2744"/>
+                            <g stroke="#2d4a7a" stroke-width="0.5" opacity="0.5">
+                                <line x1="0" y1="130" x2="400" y2="130"/>
+                                <line x1="200" y1="0" x2="200" y2="260"/>
+                            </g>
+                            <path d="M100 180 L200 60 L300 180" fill="none" stroke="#4a90d9" stroke-width="1.5"/>
+                            <line x1="100" y1="180" x2="300" y2="180" stroke="#4a90d9" stroke-width="1"/>
+                            <circle cx="200" cy="60" r="4" fill="#d4a853"/>
+                            <text x="200" y="220" text-anchor="middle" fill="#4a90d9" font-size="11" font-family="Space Grotesk" data-en="Photo Placeholder" data-pt="Espa&ccedil;o para Foto">Photo Placeholder</text>
+                        </svg>
+                    </div>
+                    <div class="projects__info">
+                        <h3 class="projects__name" data-en="Industrial Warehouse Complex" data-pt="Complexo de Galp&otilde;es Industriais">Industrial Warehouse Complex</h3>
+                        <div class="projects__meta">
+                            <span class="projects__type" data-en="Industrial" data-pt="Industrial">Industrial</span>
+                            <span class="projects__location" data-en="Campinas, SP" data-pt="Campinas, SP">Campinas, SP</span>
+                        </div>
+                        <p class="projects__challenge"><strong data-en="Challenge:" data-pt="Desafio:">Challenge:</strong> <span data-en="Long-span steel structure requiring seismic and wind load analysis." data-pt="Estrutura met&aacute;lica de grandes v&atilde;os com an&aacute;lise s&iacute;smica e de cargas de vento.">Long-span steel structure requiring seismic and wind load analysis.</span></p>
+                        <p class="projects__result"><strong data-en="Result:" data-pt="Resultado:">Result:</strong> <span data-en="12,000m&sup2; covered area with zero structural non-conformities." data-pt="12.000m&sup2; de &aacute;rea coberta com zero n&atilde;o-conformidades estruturais.">12,000m&sup2; covered area with zero structural non-conformities.</span></p>
+                    </div>
+                </div>
+                <div class="projects__card fade-in">
+                    <div class="projects__image">
+                        <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="260" fill="#1a2744"/>
+                            <g stroke="#2d4a7a" stroke-width="0.5" opacity="0.5">
+                                <line x1="0" y1="130" x2="400" y2="130"/>
+                                <line x1="200" y1="0" x2="200" y2="260"/>
+                            </g>
+                            <rect x="80" y="100" width="240" height="80" rx="4" fill="none" stroke="#4a90d9" stroke-width="1"/>
+                            <line x1="80" y1="100" x2="80" y2="180" stroke="#4a90d9" stroke-width="2"/>
+                            <line x1="320" y1="100" x2="320" y2="180" stroke="#4a90d9" stroke-width="2"/>
+                            <path d="M80 140 Q200 80 320 140" fill="none" stroke="#d4a853" stroke-width="1.5"/>
+                            <text x="200" y="220" text-anchor="middle" fill="#4a90d9" font-size="11" font-family="Space Grotesk" data-en="Photo Placeholder" data-pt="Espa&ccedil;o para Foto">Photo Placeholder</text>
+                        </svg>
+                    </div>
+                    <div class="projects__info">
+                        <h3 class="projects__name" data-en="Riverside Bridge Retrofit" data-pt="Retrofit de Ponte Ribeirinha">Riverside Bridge Retrofit</h3>
+                        <div class="projects__meta">
+                            <span class="projects__type" data-en="Infrastructure" data-pt="Infraestrutura">Infrastructure</span>
+                            <span class="projects__location" data-en="Santos, SP" data-pt="Santos, SP">Santos, SP</span>
+                        </div>
+                        <p class="projects__challenge"><strong data-en="Challenge:" data-pt="Desafio:">Challenge:</strong> <span data-en="Structural reinforcement of aging bridge while maintaining traffic flow." data-pt="Refor&ccedil;o estrutural de ponte antiga mantendo o fluxo de tr&aacute;fego.">Structural reinforcement of aging bridge while maintaining traffic flow.</span></p>
+                        <p class="projects__result"><strong data-en="Result:" data-pt="Resultado:">Result:</strong> <span data-en="Extended service life by 30 years with carbon fiber reinforcement." data-pt="Vida &uacute;til estendida em 30 anos com refor&ccedil;o em fibra de carbono.">Extended service life by 30 years with carbon fiber reinforcement.</span></p>
+                    </div>
+                </div>
+                <div class="projects__card fade-in">
+                    <div class="projects__image">
+                        <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="260" fill="#1a2744"/>
+                            <g stroke="#2d4a7a" stroke-width="0.5" opacity="0.5">
+                                <line x1="0" y1="130" x2="400" y2="130"/>
+                                <line x1="200" y1="0" x2="200" y2="260"/>
+                            </g>
+                            <rect x="140" y="60" width="120" height="140" rx="2" fill="none" stroke="#4a90d9" stroke-width="1"/>
+                            <line x1="140" y1="100" x2="260" y2="100" stroke="#4a90d9" stroke-width="0.5"/>
+                            <line x1="140" y1="140" x2="260" y2="140" stroke="#4a90d9" stroke-width="0.5"/>
+                            <rect x="170" y="110" width="20" height="20" fill="#d4a853" opacity="0.3"/>
+                            <rect x="210" y="110" width="20" height="20" fill="#d4a853" opacity="0.3"/>
+                            <rect x="170" y="150" width="20" height="20" fill="#d4a853" opacity="0.2"/>
+                            <rect x="210" y="150" width="20" height="20" fill="#d4a853" opacity="0.2"/>
+                            <text x="200" y="230" text-anchor="middle" fill="#4a90d9" font-size="11" font-family="Space Grotesk" data-en="Photo Placeholder" data-pt="Espa&ccedil;o para Foto">Photo Placeholder</text>
+                        </svg>
+                    </div>
+                    <div class="projects__info">
+                        <h3 class="projects__name" data-en="Residential High-Rise" data-pt="Edif&iacute;cio Residencial de Alto Padr&atilde;o">Residential High-Rise</h3>
+                        <div class="projects__meta">
+                            <span class="projects__type" data-en="Residential" data-pt="Residencial">Residential</span>
+                            <span class="projects__location" data-en="Guarulhos, SP" data-pt="Guarulhos, SP">Guarulhos, SP</span>
+                        </div>
+                        <p class="projects__challenge"><strong data-en="Challenge:" data-pt="Desafio:">Challenge:</strong> <span data-en="22-story building with transfer beams and basement parking levels." data-pt="Edif&iacute;cio de 22 andares com vigas de transi&ccedil;&atilde;o e subsolos de estacionamento.">22-story building with transfer beams and basement parking levels.</span></p>
+                        <p class="projects__result"><strong data-en="Result:" data-pt="Resultado:">Result:</strong> <span data-en="Optimized column layout reduced concrete usage by 18%." data-pt="Layout otimizado de pilares reduziu o consumo de concreto em 18%.">Optimized column layout reduced concrete usage by 18%.</span></p>
+                    </div>
+                </div>
+                <div class="projects__card fade-in">
+                    <div class="projects__image">
+                        <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="260" fill="#1a2744"/>
+                            <g stroke="#2d4a7a" stroke-width="0.5" opacity="0.5">
+                                <line x1="0" y1="130" x2="400" y2="130"/>
+                                <line x1="200" y1="0" x2="200" y2="260"/>
+                            </g>
+                            <ellipse cx="200" cy="130" rx="100" ry="50" fill="none" stroke="#4a90d9" stroke-width="1"/>
+                            <ellipse cx="200" cy="130" rx="60" ry="30" fill="none" stroke="#4a90d9" stroke-width="0.5"/>
+                            <line x1="200" y1="80" x2="200" y2="180" stroke="#d4a853" stroke-width="1"/>
+                            <line x1="100" y1="130" x2="300" y2="130" stroke="#d4a853" stroke-width="1"/>
+                            <text x="200" y="220" text-anchor="middle" fill="#4a90d9" font-size="11" font-family="Space Grotesk" data-en="Photo Placeholder" data-pt="Espa&ccedil;o para Foto">Photo Placeholder</text>
+                        </svg>
+                    </div>
+                    <div class="projects__info">
+                        <h3 class="projects__name" data-en="Sports Arena Canopy" data-pt="Cobertura de Arena Esportiva">Sports Arena Canopy</h3>
+                        <div class="projects__meta">
+                            <span class="projects__type" data-en="Sports &amp; Entertainment" data-pt="Esportes &amp; Entretenimento">Sports &amp; Entertainment</span>
+                            <span class="projects__location" data-en="Ribeir&atilde;o Preto, SP" data-pt="Ribeir&atilde;o Preto, SP">Ribeir&atilde;o Preto, SP</span>
+                        </div>
+                        <p class="projects__challenge"><strong data-en="Challenge:" data-pt="Desafio:">Challenge:</strong> <span data-en="Tension membrane canopy over 5,000-seat arena with minimal support columns." data-pt="Cobertura tensionada sobre arena de 5.000 lugares com m&iacute;nimos pilares de suporte.">Tension membrane canopy over 5,000-seat arena with minimal support columns.</span></p>
+                        <p class="projects__result"><strong data-en="Result:" data-pt="Resultado:">Result:</strong> <span data-en="Clear-span design achieved with cable-stayed system, on budget." data-pt="Design de v&atilde;o livre alcan&ccedil;ado com sistema estaiado, dentro do or&ccedil;amento.">Clear-span design achieved with cable-stayed system, on budget.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CHECKLIST ========== -->
+    <section class="section checklist" id="checklist">
+        <div class="container">
+            <div class="section__header fade-in">
+                <p class="section__label" data-en="Before You Reach Out" data-pt="Antes de Entrar em Contato">Before You Reach Out</p>
+                <h2 class="section__title" data-en="Start your project right." data-pt="Comece seu projeto certo.">Start your project right.</h2>
+                <p class="section__subtitle" data-en="To give you the most accurate assessment, here is what we need from you. Having these items ready helps us help you faster." data-pt="Para lhe dar a avalia&ccedil;&atilde;o mais precisa, veja o que precisamos de voc&ecirc;. Ter esses itens prontos nos ajuda a ajud&aacute;-lo mais r&aacute;pido.">To give you the most accurate assessment, here is what we need from you. Having these items ready helps us help you faster.</p>
+            </div>
+            <div class="checklist__grid">
+                <div class="checklist__item fade-in">
+                    <div class="checklist__check">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="20" height="20" rx="4" stroke="#4a90d9" stroke-width="1.5"/>
+                            <path d="M7 12l3 3 7-7" stroke="#d4a853" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="checklist__text">
+                        <h4 data-en="Architectural Drawings" data-pt="Projetos Arquitet&ocirc;nicos">Architectural Drawings</h4>
+                        <p data-en="Floor plans, elevations, and sections &mdash; even preliminary versions help us understand scale and layout." data-pt="Plantas baixas, eleva&ccedil;&otilde;es e cortes &mdash; mesmo vers&otilde;es preliminares nos ajudam a entender escala e layout.">Floor plans, elevations, and sections &mdash; even preliminary versions help us understand scale and layout.</p>
+                    </div>
+                </div>
+                <div class="checklist__item fade-in">
+                    <div class="checklist__check">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="20" height="20" rx="4" stroke="#4a90d9" stroke-width="1.5"/>
+                            <path d="M7 12l3 3 7-7" stroke="#d4a853" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="checklist__text">
+                        <h4 data-en="Site Survey / Topography" data-pt="Levantamento Topogr&aacute;fico">Site Survey / Topography</h4>
+                        <p data-en="A topographic survey of the site with boundary lines, elevation data, and existing structures." data-pt="Levantamento topogr&aacute;fico do terreno com limites, dados altim&eacute;tricos e estruturas existentes.">A topographic survey of the site with boundary lines, elevation data, and existing structures.</p>
+                    </div>
+                </div>
+                <div class="checklist__item fade-in">
+                    <div class="checklist__check">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="20" height="20" rx="4" stroke="#4a90d9" stroke-width="1.5"/>
+                            <path d="M7 12l3 3 7-7" stroke="#d4a853" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="checklist__text">
+                        <h4 data-en="Soil / Geotechnical Reports" data-pt="Laudos Geot&eacute;cnicos / Sondagem">Soil / Geotechnical Reports</h4>
+                        <p data-en="SPT boring logs or any geotechnical investigation. This determines foundation type and depth." data-pt="Laudos de sondagem SPT ou investiga&ccedil;&atilde;o geot&eacute;cnica. Isso determina o tipo e profundidade da funda&ccedil;&atilde;o.">SPT boring logs or any geotechnical investigation. This determines foundation type and depth.</p>
+                    </div>
+                </div>
+                <div class="checklist__item fade-in">
+                    <div class="checklist__check">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="20" height="20" rx="4" stroke="#4a90d9" stroke-width="1.5"/>
+                            <path d="M7 12l3 3 7-7" stroke="#d4a853" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="checklist__text">
+                        <h4 data-en="Project Timeline" data-pt="Cronograma do Projeto">Project Timeline</h4>
+                        <p data-en="When do you need to break ground? When is the target completion? We plan backwards from your deadline." data-pt="Quando voc&ecirc; precisa iniciar a obra? Qual a data alvo de conclus&atilde;o? Planejamos de tr&aacute;s para frente a partir do seu prazo.">When do you need to break ground? When is the target completion? We plan backwards from your deadline.</p>
+                    </div>
+                </div>
+                <div class="checklist__item fade-in">
+                    <div class="checklist__check">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="20" height="20" rx="4" stroke="#4a90d9" stroke-width="1.5"/>
+                            <path d="M7 12l3 3 7-7" stroke="#d4a853" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="checklist__text">
+                        <h4 data-en="Budget Range" data-pt="Faixa de Or&ccedil;amento">Budget Range</h4>
+                        <p data-en="Even an approximate budget helps us calibrate the structural solution to your financial reality." data-pt="Mesmo um or&ccedil;amento aproximado nos ajuda a calibrar a solu&ccedil;&atilde;o estrutural &agrave; sua realidade financeira.">Even an approximate budget helps us calibrate the structural solution to your financial reality.</p>
+                    </div>
+                </div>
+                <div class="checklist__item fade-in">
+                    <div class="checklist__check">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="20" height="20" rx="4" stroke="#4a90d9" stroke-width="1.5"/>
+                            <path d="M7 12l3 3 7-7" stroke="#d4a853" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="checklist__text">
+                        <h4 data-en="Permits &amp; Approvals" data-pt="Alvar&aacute;s &amp; Aprova&ccedil;&otilde;es">Permits &amp; Approvals</h4>
+                        <p data-en="Any existing municipal permits, environmental approvals, or regulatory requirements for the site." data-pt="Quaisquer alvar&aacute;s municipais, aprova&ccedil;&otilde;es ambientais ou requisitos regulat&oacute;rios do terreno existentes.">Any existing municipal permits, environmental approvals, or regulatory requirements for the site.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="checklist__cta fade-in">
+                <p data-en="Do not have everything yet? That is okay. Reach out and we will guide you on what to gather first." data-pt="N&atilde;o tem tudo ainda? Tudo bem. Entre em contato e n&oacute;s orientaremos voc&ecirc; sobre o que reunir primeiro.">Do not have everything yet? That is okay. Reach out and we will guide you on what to gather first.</p>
+                <a href="#contact" class="btn btn--primary" data-en="Get in Touch" data-pt="Entre em Contato">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section__header fade-in">
+                <p class="section__label" data-en="Let's Talk" data-pt="Vamos Conversar">Let's Talk</p>
+                <h2 class="section__title" data-en="Start the conversation." data-pt="Comece a conversa.">Start the conversation.</h2>
+                <p class="section__subtitle" data-en="Tell us about your project. We will respond within 48 hours." data-pt="Conte-nos sobre seu projeto. Responderemos em at&eacute; 48 horas.">Tell us about your project. We will respond within 48 hours.</p>
+            </div>
+            <div class="contact__wrapper">
+                <form class="contact__form fade-in" id="contactForm" action="#" method="POST">
+                    <div class="contact__field">
+                        <label for="name" data-en="Full Name" data-pt="Nome Completo">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="" data-placeholder-en="Your full name" data-placeholder-pt="Seu nome completo">
+                    </div>
+                    <div class="contact__field">
+                        <label for="email" data-en="Email" data-pt="Email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="" data-placeholder-en="your@email.com" data-placeholder-pt="seu@email.com">
+                    </div>
+                    <div class="contact__field">
+                        <label for="company" data-en="Company" data-pt="Empresa">Company</label>
+                        <input type="text" id="company" name="company" placeholder="" data-placeholder-en="Your company name" data-placeholder-pt="Nome da sua empresa">
+                    </div>
+                    <div class="contact__field">
+                        <label for="projectType" data-en="Project Type" data-pt="Tipo de Projeto">Project Type</label>
+                        <select id="projectType" name="projectType">
+                            <option value="" data-en="Select project type" data-pt="Selecione o tipo de projeto">Select project type</option>
+                            <option value="commercial" data-en="Commercial Building" data-pt="Edif&iacute;cio Comercial">Commercial Building</option>
+                            <option value="residential" data-en="Residential Building" data-pt="Edif&iacute;cio Residencial">Residential Building</option>
+                            <option value="industrial" data-en="Industrial / Warehouse" data-pt="Industrial / Galp&atilde;o">Industrial / Warehouse</option>
+                            <option value="infrastructure" data-en="Infrastructure (Bridge, Road)" data-pt="Infraestrutura (Ponte, Estrada)">Infrastructure (Bridge, Road)</option>
+                            <option value="retrofit" data-en="Retrofit / Reinforcement" data-pt="Retrofit / Refor&ccedil;o">Retrofit / Reinforcement</option>
+                            <option value="other" data-en="Other" data-pt="Outro">Other</option>
+                        </select>
+                    </div>
+                    <div class="contact__field contact__field--full">
+                        <label for="message" data-en="Message" data-pt="Mensagem">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="" data-placeholder-en="Tell us about your project, timeline, and any specific challenges." data-placeholder-pt="Conte-nos sobre seu projeto, cronograma e quaisquer desafios espec&iacute;ficos."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary contact__submit" data-en="Send Message" data-pt="Enviar Mensagem">Send Message</button>
+                </form>
+                <div class="contact__info fade-in">
+                    <div class="contact__info-block">
+                        <h4 data-en="Location" data-pt="Localiza&ccedil;&atilde;o">Location</h4>
+                        <p>S&atilde;o Paulo, SP<br>Brasil</p>
+                    </div>
+                    <div class="contact__info-block">
+                        <h4 data-en="Email" data-pt="Email">Email</h4>
+                        <p><a href="mailto:contato@valeriaramb.com.br">contato@valeriaramb.com.br</a></p>
+                    </div>
+                    <div class="contact__info-block">
+                        <h4 data-en="Working Hours" data-pt="Hor&aacute;rio de Atendimento">Working Hours</h4>
+                        <p data-en="Monday &ndash; Friday<br>9:00 &ndash; 18:00 (BRT)" data-pt="Segunda &ndash; Sexta<br>9:00 &ndash; 18:00 (BRT)">Monday &ndash; Friday<br>9:00 &ndash; 18:00 (BRT)</p>
+                    </div>
+                    <div class="contact__info-block">
+                        <h4 data-en="International Projects" data-pt="Projetos Internacionais">International Projects</h4>
+                        <p data-en="Building in Brazil from abroad? We work with international companies navigating Brazilian construction regulations." data-pt="Construindo no Brasil vindo do exterior? Trabalhamos com empresas internacionais navegando as regulamenta&ccedil;&otilde;es de constru&ccedil;&atilde;o brasileiras.">Building in Brazil from abroad? We work with international companies navigating Brazilian construction regulations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <span class="nav__logo-mark">VR</span>
+                    <span class="footer__name">Valeria Ramb</span>
+                    <p class="footer__tagline" data-en="Structural Engineering" data-pt="Engenharia Estrutural">Structural Engineering</p>
+                </div>
+                <div class="footer__links">
+                    <a href="#about" data-en="About" data-pt="Sobre">About</a>
+                    <a href="#why" data-en="Why Structural" data-pt="Por Que Estrutural">Why Structural</a>
+                    <a href="#approach" data-en="Our Approach" data-pt="Nossa Abordagem">Our Approach</a>
+                    <a href="#projects" data-en="Projects" data-pt="Projetos">Projects</a>
+                    <a href="#contact" data-en="Contact" data-pt="Contato">Contact</a>
+                </div>
+                <p class="footer__copy" data-en="&copy; 2026 Valeria Ramb Structural Engineering. All rights reserved." data-pt="&copy; 2026 Valeria Ramb Engenharia Estrutural. Todos os direitos reservados.">&copy; 2026 Valeria Ramb Structural Engineering. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
