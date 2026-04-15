@@ -238,22 +238,26 @@ h4 { font-size: 1.1rem; }
 .nav__lang {
     display: flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: 0.25rem;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--color-border);
     border-radius: 6px;
-    padding: 0.35rem 0.65rem;
-    cursor: pointer;
+    padding: 0.35rem 0.5rem;
+    cursor: default;
     flex-shrink: 0;
     font-family: var(--font-heading);
 }
 
 .nav__lang-option {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 500;
     color: var(--color-text-muted);
     transition: color var(--transition);
     cursor: pointer;
+}
+
+.nav__lang-option:hover {
+    color: var(--color-white);
 }
 
 .nav__lang-option--active {
@@ -955,6 +959,63 @@ h4 { font-size: 1.1rem; }
     color: var(--color-warm);
 }
 
+/* ---------- TRUSTED BY ---------- */
+.trusted {
+    padding: var(--space-xl) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.trusted__content {
+    text-align: center;
+}
+
+.trusted__label {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: var(--space-md);
+}
+
+.trusted__grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+}
+
+.trusted__item {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    letter-spacing: 1px;
+    opacity: 0.6;
+    transition: opacity var(--transition), color var(--transition);
+    text-decoration: none;
+}
+
+.trusted__item:hover {
+    opacity: 1;
+    color: var(--color-warm);
+}
+
+/* ---------- COMPANY TAGLINE ---------- */
+.company-tagline {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--color-warm);
+    line-height: 1.6;
+    font-style: italic;
+    max-width: 600px;
+    opacity: 0.85;
+}
+
 /* ---------- FOOTER ---------- */
 .footer {
     padding: var(--space-xl) 0;
@@ -1484,20 +1545,33 @@ h4 { font-size: 1.1rem; }
 }
 
 .checklist-full {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
     margin-bottom: var(--space-3xl);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .checklist-full__item {
-    display: flex;
-    gap: var(--space-md);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
     padding: var(--space-lg);
     background: linear-gradient(145deg, rgba(26, 39, 68, 0.6), rgba(10, 22, 40, 0.8));
     border: 1px solid var(--color-border);
     border-radius: 12px;
     transition: border-color var(--transition);
+    align-items: center;
+}
+
+.checklist-full__item:nth-child(even) {
+    direction: rtl;
+}
+
+.checklist-full__item:nth-child(even) > * {
+    direction: ltr;
 }
 
 .checklist-full__item:hover {
@@ -1505,22 +1579,62 @@ h4 { font-size: 1.1rem; }
 }
 
 .checklist-full__icon {
-    flex-shrink: 0;
-    width: 24px;
-    height: 24px;
-    color: var(--color-warm);
-    margin-top: 4px;
+    display: none;
 }
 
-.checklist-full__item h4 {
-    font-size: 1rem;
+.checklist-full__image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(135deg, rgba(45, 74, 122, 0.4), rgba(26, 39, 68, 0.8));
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.checklist-full__image svg {
+    width: 48%;
+    height: 48%;
+    color: var(--color-warm);
+    opacity: 0.5;
+}
+
+.checklist-full__number {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-warm);
+    opacity: 0.3;
+    line-height: 1;
     margin-bottom: 0.5rem;
 }
 
+.checklist-full__item h4 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+}
+
 .checklist-full__item p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--color-text);
-    line-height: 1.6;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .checklist-full__item {
+        grid-template-columns: 1fr;
+    }
+    .checklist-full__item:nth-child(even) {
+        direction: ltr;
+    }
+    .checklist-full__image {
+        max-width: 280px;
+    }
 }
 
 /* ========== SECTION ALT BACKGROUND ========== */

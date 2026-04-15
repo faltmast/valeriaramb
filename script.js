@@ -10,22 +10,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const html = document.documentElement;
     let currentLang = 'en';
 
+    const supportedLangs = ['en', 'pt', 'es', 'zh'];
+
     function setLanguage(lang) {
+        if (!supportedLangs.includes(lang)) lang = 'en';
         currentLang = lang;
         html.setAttribute('data-lang', lang);
 
-        document.querySelectorAll('[data-en][data-pt]').forEach(el => {
-            const text = el.getAttribute(`data-${lang}`);
+        document.querySelectorAll('[data-en]').forEach(el => {
+            const text = el.getAttribute(`data-${lang}`) || el.getAttribute('data-en');
             if (text) el.innerHTML = text;
         });
 
-        document.querySelectorAll('[data-placeholder-en][data-placeholder-pt]').forEach(el => {
-            const placeholder = el.getAttribute(`data-placeholder-${lang}`);
+        document.querySelectorAll('[data-placeholder-en]').forEach(el => {
+            const placeholder = el.getAttribute(`data-placeholder-${lang}`) || el.getAttribute('data-placeholder-en');
             if (placeholder) el.placeholder = placeholder;
         });
 
-        document.querySelectorAll('select option[data-en][data-pt]').forEach(option => {
-            const text = option.getAttribute(`data-${lang}`);
+        document.querySelectorAll('select option[data-en]').forEach(option => {
+            const text = option.getAttribute(`data-${lang}`) || option.getAttribute('data-en');
             if (text) option.textContent = text;
         });
 
@@ -39,9 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (langToggle) {
-        langToggle.addEventListener('click', () => {
-            setLanguage(currentLang === 'en' ? 'pt' : 'en');
-        });
         langToggle.querySelectorAll('.nav__lang-option').forEach(opt => {
             opt.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -53,11 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check saved preference or browser language
     try {
         const savedLang = localStorage.getItem('vr-lang');
-        if (savedLang && (savedLang === 'en' || savedLang === 'pt')) {
+        if (savedLang && supportedLangs.includes(savedLang)) {
             setLanguage(savedLang);
         } else {
-            const browserLang = navigator.language || navigator.userLanguage;
-            setLanguage(browserLang && browserLang.startsWith('pt') ? 'pt' : 'en');
+            const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+            if (browserLang.startsWith('pt')) setLanguage('pt');
+            else if (browserLang.startsWith('es')) setLanguage('es');
+            else if (browserLang.startsWith('zh')) setLanguage('zh');
+            else setLanguage('en');
         }
     } catch (e) { setLanguage('en'); }
 
@@ -181,10 +184,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!valid) return;
 
             submitBtn.disabled = true;
-            submitBtn.textContent = currentLang === 'pt' ? 'Enviando...' : 'Sending...';
+            const sendingText = { en: 'Sending...', pt: 'Enviando...', es: 'Enviando...', zh: '发送中...' };
+            submitBtn.textContent = sendingText[currentLang] || sendingText.en;
 
             setTimeout(() => {
-                submitBtn.textContent = currentLang === 'pt' ? 'Mensagem Enviada!' : 'Message Sent!';
+                const sentText = { en: 'Message Sent!', pt: 'Mensagem Enviada!', es: 'Mensaje Enviado!', zh: '消息已发送！' };
+                submitBtn.textContent = sentText[currentLang] || sentText.en;
                 submitBtn.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
                 contactForm.reset();
                 setTimeout(() => {

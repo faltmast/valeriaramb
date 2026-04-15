@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NU GUA — Research & Marketing Strategy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        @page { size: A4; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a1628;
+            color: #c8d6e5;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 48px 52px;
+            page-break-after: always;
+            position: relative;
+        }
+        .page:last-child { page-break-after: avoid; }
+        .page-num {
+            position: absolute;
+            bottom: 32px;
+            right: 52px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 11px;
+            color: #7f8fa6;
+        }
+
+        /* Cover */
+        .cover { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+        .cover .logo { display: flex; align-items: center; gap: 14px; margin-bottom: 80px; }
+        .logo-mark {
+            font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 22px;
+            color: #d4a853; border: 2px solid #d4a853; border-radius: 6px;
+            padding: 5px 10px; letter-spacing: 1px;
+        }
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 20px;
+            color: #ffffff; letter-spacing: 3px;
+        }
+        .cover h1 {
+            font-family: 'Space Grotesk', sans-serif; font-size: 42px; font-weight: 700;
+            color: #ffffff; line-height: 1.15; margin-bottom: 16px; letter-spacing: -1px;
+        }
+        .cover h1 span { color: #d4a853; }
+        .cover .cover-sub { font-size: 17px; color: #7f8fa6; line-height: 1.6; max-width: 500px; margin-bottom: 60px; }
+        .cover-meta { font-size: 13px; color: #4a90d9; }
+        .cover-line { width: 60px; height: 3px; background: #d4a853; margin-bottom: 24px; border-radius: 2px; }
+
+        /* Section headers */
+        .section-label {
+            font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600;
+            color: #d4a853; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 8px;
+        }
+        h2 {
+            font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700;
+            color: #ffffff; margin-bottom: 10px; letter-spacing: -0.5px; line-height: 1.2;
+        }
+        .page-intro {
+            font-size: 16px; color: #7f8fa6; margin-bottom: 20px; line-height: 1.6; max-width: 540px;
+        }
+        .divider { width: 40px; height: 2px; background: #d4a853; margin-bottom: 24px; border-radius: 2px; }
+
+        /* Guide text - narrator descriptions */
+        .guide {
+            background: rgba(212, 168, 83, 0.06);
+            border-left: 3px solid #d4a853;
+            padding: 16px 22px;
+            margin-bottom: 24px;
+            border-radius: 0 8px 8px 0;
+        }
+        .guide p {
+            font-size: 15.5px;
+            line-height: 1.75;
+            color: #e8f0fe;
+        }
+        .guide strong { color: #d4a853; }
+
+        /* Pain cards */
+        .pain-card {
+            background: rgba(26, 39, 68, 0.6); border: 1px solid rgba(74, 144, 217, 0.15);
+            border-radius: 10px; padding: 20px 24px; margin-bottom: 12px;
+            display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: start;
+        }
+        .pain-num {
+            font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700;
+            color: #d4a853; line-height: 1; padding-top: 2px;
+        }
+        .pain-content h3 {
+            font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600;
+            color: #ffffff; margin-bottom: 5px;
+        }
+        .pain-content p { font-size: 14.5px; line-height: 1.65; color: #c8d6e5; }
+        .pain-quote {
+            font-style: italic; color: #4a90d9; margin-top: 6px; font-size: 13.5px;
+            line-height: 1.55; padding-left: 12px; border-left: 2px solid rgba(74, 144, 217, 0.3);
+        }
+        .pain-tag {
+            display: inline-block; font-size: 11px; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 1px; padding: 3px 10px; border-radius: 12px; margin-top: 6px;
+        }
+        .tag-high { background: rgba(212, 168, 83, 0.15); color: #d4a853; }
+        .tag-medium { background: rgba(74, 144, 217, 0.15); color: #4a90d9; }
+        .val-note {
+            margin-top: 8px; font-size: 13px; color: #6fcf97; line-height: 1.5;
+            padding: 6px 12px; background: rgba(111, 207, 151, 0.08);
+            border-left: 2px solid rgba(111, 207, 151, 0.4); border-radius: 0 4px 4px 0;
+        }
+
+        /* Stat boxes */
+        .stats-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 24px; }
+        .stat-box {
+            background: linear-gradient(135deg, #1a2744, #2d4a7a);
+            border: 1px solid rgba(212, 168, 83, 0.2); border-radius: 10px;
+            padding: 20px 18px; text-align: center;
+        }
+        .stat-num {
+            font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700;
+            color: #d4a853; display: block; margin-bottom: 6px;
+        }
+        .stat-label { font-size: 13.5px; color: #c8d6e5; line-height: 1.45; }
+
+        /* Competitor table */
+        .comp-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+        .comp-table th {
+            font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600;
+            color: #d4a853; text-transform: uppercase; letter-spacing: 1px; text-align: left;
+            padding: 12px 16px; border-bottom: 1px solid rgba(74, 144, 217, 0.2);
+        }
+        .comp-table td {
+            font-size: 14.5px; padding: 14px 16px;
+            border-bottom: 1px solid rgba(74, 144, 217, 0.08); color: #c8d6e5;
+        }
+        .comp-table tr:last-child td { border-bottom: none; }
+        .comp-table .nugua-row td { background: rgba(212, 168, 83, 0.06); color: #ffffff; font-weight: 500; }
+
+        /* Solution box */
+        .solution-box {
+            background: linear-gradient(135deg, #1a2744, #2d4a7a);
+            border: 1px solid rgba(212, 168, 83, 0.3); border-radius: 12px;
+            padding: 28px 30px; margin-bottom: 24px;
+        }
+        .solution-box h3 {
+            font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600;
+            color: #ffffff; margin-bottom: 4px;
+        }
+        .solution-box .sol-sub { font-size: 15px; color: #d4a853; margin-bottom: 14px; }
+        .solution-box p { font-size: 15px; line-height: 1.7; color: #e8f0fe; }
+
+        /* Checklist */
+        .checklist-section { margin-bottom: 18px; }
+        .checklist-section h4 {
+            font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600;
+            color: #4a90d9; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
+        }
+        .checklist-item {
+            display: flex; align-items: flex-start; gap: 10px; padding: 6px 0;
+            font-size: 14px; line-height: 1.55; color: #c8d6e5;
+        }
+        .check-box {
+            width: 15px; height: 15px; min-width: 15px;
+            border: 1.5px solid rgba(74, 144, 217, 0.4); border-radius: 3px; margin-top: 2px;
+        }
+
+        /* Funnel */
+        .funnel-steps { display: flex; align-items: stretch; gap: 0; margin-bottom: 24px; }
+        .funnel-step {
+            flex: 1; text-align: center; background: rgba(26, 39, 68, 0.6);
+            border: 1px solid rgba(74, 144, 217, 0.15); padding: 18px 10px;
+        }
+        .funnel-step:first-child { border-radius: 10px 0 0 10px; }
+        .funnel-step:last-child { border-radius: 0 10px 10px 0; }
+        .funnel-step .f-num {
+            font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700;
+            color: #4a90d9; display: block; margin-bottom: 4px;
+        }
+        .funnel-step .f-title {
+            font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600;
+            color: #d4a853; text-transform: uppercase; letter-spacing: 0.5px;
+            display: block; margin-bottom: 4px;
+        }
+        .funnel-step .f-desc { font-size: 12.5px; color: #7f8fa6; line-height: 1.4; }
+
+        /* Copy blocks */
+        .copy-block {
+            background: rgba(26, 39, 68, 0.6); border: 1px solid rgba(74, 144, 217, 0.15);
+            border-radius: 10px; padding: 20px 24px; margin-bottom: 14px;
+        }
+        .copy-block .copy-label {
+            font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600;
+            color: #4a90d9; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;
+        }
+        .copy-block .copy-text {
+            font-size: 18px; font-weight: 500; color: #ffffff; line-height: 1.4;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .copy-block .copy-text-sm { font-size: 15px; color: #e8f0fe; line-height: 1.6; }
+
+        /* Email cards */
+        .email-card {
+            background: rgba(26, 39, 68, 0.6); border: 1px solid rgba(74, 144, 217, 0.15);
+            border-radius: 10px; padding: 16px 20px; margin-bottom: 10px;
+        }
+        .email-card .email-num {
+            font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600;
+            color: #d4a853; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px;
+        }
+        .email-card .email-subject { font-size: 15px; font-weight: 500; color: #ffffff; margin-bottom: 3px; }
+        .email-card .email-desc { font-size: 13.5px; color: #7f8fa6; line-height: 1.55; }
+
+        /* Timeline */
+        .timeline-block {
+            background: rgba(26, 39, 68, 0.6); border: 1px solid rgba(74, 144, 217, 0.15);
+            border-radius: 10px; padding: 20px 24px; margin-bottom: 12px;
+        }
+        .timeline-block h4 {
+            font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600;
+            color: #ffffff; margin-bottom: 2px;
+        }
+        .timeline-block .t-goal { font-size: 14px; color: #d4a853; margin-bottom: 10px; }
+        .timeline-block ul { list-style: none; }
+        .timeline-block li {
+            font-size: 14px; color: #c8d6e5; padding: 3px 0; padding-left: 16px;
+            position: relative; line-height: 1.5;
+        }
+        .timeline-block li::before {
+            content: ''; position: absolute; left: 0; top: 9px;
+            width: 5px; height: 5px; border-radius: 50%; background: #4a90d9;
+        }
+
+        /* Two columns */
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
+        .col-box {
+            background: rgba(26, 39, 68, 0.6); border: 1px solid rgba(74, 144, 217, 0.15);
+            border-radius: 10px; padding: 20px 22px;
+        }
+        .col-box h4 {
+            font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600;
+            color: #4a90d9; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
+        }
+        .col-box li {
+            font-size: 14px; color: #c8d6e5; padding: 3px 0; padding-left: 16px;
+            position: relative; line-height: 1.5; list-style: none;
+        }
+        .col-box li::before {
+            content: ''; position: absolute; left: 0; top: 9px;
+            width: 5px; height: 5px; border-radius: 50%; background: #d4a853;
+        }
+
+        /* KPIs */
+        .kpi-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+        .kpi {
+            background: linear-gradient(135deg, #1a2744, #2d4a7a);
+            border: 1px solid rgba(212, 168, 83, 0.2); border-radius: 10px;
+            padding: 16px 14px; text-align: center;
+        }
+        .kpi .kpi-num {
+            font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700;
+            color: #d4a853; display: block;
+        }
+        .kpi .kpi-label { font-size: 13px; color: #c8d6e5; line-height: 1.4; margin-top: 4px; }
+
+        /* Next steps */
+        .next-step {
+            display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center;
+            padding: 12px 18px; background: rgba(26, 39, 68, 0.6);
+            border: 1px solid rgba(74, 144, 217, 0.15); border-radius: 8px; margin-bottom: 7px;
+        }
+        .ns-who {
+            font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 600;
+            color: #4a90d9; text-transform: uppercase; letter-spacing: 1px;
+            background: rgba(74, 144, 217, 0.1); padding: 4px 10px; border-radius: 12px;
+        }
+        .ns-who.alexis { color: #d4a853; background: rgba(212, 168, 83, 0.1); }
+        .ns-task { font-size: 14px; color: #e8f0fe; }
+        .ns-date { font-size: 12px; color: #7f8fa6; font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- PAGE 1: COVER -->
+<!-- ============================================================ -->
+<div class="page cover">
+    <div class="logo">
+        <span class="logo-mark">NG</span>
+        <span class="logo-text">NU GUA</span>
+    </div>
+    <div class="cover-line"></div>
+    <h1>Market Research &<br><span>Growth Strategy</span></h1>
+    <p class="cover-sub">We studied your market. We found what your future clients need. Now we have a plan to bring them to you. This document shows you everything step by step.</p>
+    <p class="cover-meta">Prepared for Valeria Ramb &mdash; April 2026</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 2: WHAT WE DID -->
+<!-- ============================================================ -->
+<div class="page">
+    <p class="section-label">Introduction</p>
+    <h2>What We Did &<br>How to Read This</h2>
+    <div class="divider"></div>
+
+    <div class="guide">
+        <p>After our first conversation, we did deep research on the Brazilian infrastructure market. We looked at what construction companies need, what problems they have with structural engineers, and where NU GUA fits in.</p>
+    </div>
+
+    <div class="guide">
+        <p>We used real data from industry reports, engineering forums, and government sources. The numbers and quotes you will see are real &mdash; not our opinion.</p>
+    </div>
+
+    <div class="guide">
+        <p><strong>This document has 7 parts:</strong></p>
+        <p style="margin-top: 10px;">
+            <strong>1. The Market</strong> &mdash; How big is the opportunity? What is happening in Brazil right now?<br>
+            <strong>2. The Problems</strong> &mdash; What are construction companies struggling with when they hire structural engineers?<br>
+            <strong>3. The Solution</strong> &mdash; A free tool we created to attract these companies to NU GUA.<br>
+            <strong>4. The Website Copy</strong> &mdash; The words we will use on the landing page and in emails.<br>
+            <strong>5. How We Reach People</strong> &mdash; LinkedIn and direct email. Simple. No paid ads.<br>
+            <strong>6. The 90-Day Plan</strong> &mdash; What we do in month 1, month 2, and month 3.<br>
+            <strong>7. Next Steps</strong> &mdash; Who does what, and by when.
+        </p>
+    </div>
+
+    <div class="guide">
+        <p><strong>Important:</strong> Nothing here is final. This is a plan we built for you. If something does not feel right, we change it. You know your market better than anyone. Your feedback shapes everything.</p>
+    </div>
+
+    <span class="page-num">2</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 3: THE MARKET -->
+<!-- ============================================================ -->
+<div class="page">
+    <p class="section-label">Part 1</p>
+    <h2>The Market</h2>
+    <div class="divider"></div>
+
+    <div class="guide">
+        <p><strong>Why this matters:</strong> Before we create any marketing, we need to understand the market. How big is it? Is it growing? These numbers show that there is a lot of demand for structural engineers in Brazil right now &mdash; and not enough good ones.</p>
+    </div>
+
+    <div class="stats-row">
+        <div class="stat-box">
+            <span class="stat-num">$45.4B</span>
+            <span class="stat-label">Total infrastructure market in Brazil today</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-num">$66.9B</span>
+            <span class="stat-label">Expected by 2034 &mdash; the market is growing every year</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-num">R$610B</span>
+            <span class="stat-label">Government money (PAC) going into transport projects</span>
+        </div>
+    </div>
+
+    <div class="stats-row">
+        <div class="stat-box">
+            <span class="stat-num">230K+</span>
+            <span class="stat-label">Missing workers &mdash; Brazil does not have enough qualified professionals</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-num">5-10%</span>
+            <span class="stat-label">Extra cost on projects because of bad engineering work (rework)</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-num">30%</span>
+            <span class="stat-label">How complete most structural drawings are on big projects</span>
+        </div>
+    </div>
+
+    <div class="guide">
+        <p><strong>What this means for NU GUA:</strong> The market is big and growing. There are not enough good engineers. Companies are losing money because the engineers they hire do bad work. This is your opportunity &mdash; you already do what they need. We just need to make them see it.</p>
+    </div>
+
+    <table class="comp-table">
+        <tr>
+            <th>Who Else Is Out There</th>
+            <th>Their Weakness</th>
+        </tr>
+        <tr>
+            <td>Big firms</td>
+            <td>Too big. Clients feel like a number. No personal attention.</td>
+        </tr>
+        <tr>
+            <td>Medium firms</td>
+            <td>Do the minimum. Drawings are not complete. Just enough to finish.</td>
+        </tr>
+        <tr>
+            <td>Solo engineers</td>
+            <td>Not reliable. They deliver the files and disappear.</td>
+        </tr>
+        <tr class="nugua-row">
+            <td>NU GUA</td>
+            <td style="color: #ffffff; font-weight: 500;">Complete work. Full ownership. Meets deadlines. Stays involved.</td>
+        </tr>
+    </table>
+
+    <span class="page-num">3</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 4: PAIN POINTS -->
+<!-- ============================================================ -->
+<div class="page">
+    <p class="section-label">Part 2</p>
+    <h2>The 5 Biggest Problems<br>Your Future Clients Have</h2>
+    <div class="divider"></div>
+
+    <div class="guide">
+        <p><strong>What is this?</strong> We researched what construction companies complain about most when working with structural engineers. These are real problems from real companies. The quotes come from industry reports and engineering forums. <strong>These are the problems NU GUA can solve.</strong></p>
+    </div>
+
+    <div class="pain-card">
+        <span class="pain-num">1</span>
+        <div class="pain-content">
+            <h3>Drawings Are Not Complete</h3>
+            <p>Engineers send drawings that are only 30-75% finished. The construction team has to guess the rest. This causes mistakes and extra costs of 5-10% on the whole project.</p>
+            <p class="pain-quote">"On smaller projects, drawings are about 75% complete. On projects over a million dollars, that number drops to about 30%."</p>
+            <span class="pain-tag tag-high">Big Problem</span>
+            <p class="val-note">Valeria confirms: Very true. This is a major issue in the industry.</p>
+        </div>
+    </div>
+
+    <div class="pain-card">
+        <span class="pain-num">2</span>
+        <div class="pain-content">
+            <h3>Engineers Disappear After Sending Files</h3>
+            <p>The engineer sends the work and is gone. When something goes wrong on the construction site, there is nobody to call. The construction company is alone with the problem.</p>
+            <p class="pain-quote">"Firms send flawed drawings out for bid, and construction teams have to figure out how to make the design work."</p>
+            <span class="pain-tag tag-medium">Can Happen</span>
+            <p class="val-note">Valeria confirms: It happens, but it is not the biggest problem in her area of work.</p>
+        </div>
+    </div>
+
+    <div class="pain-card">
+        <span class="pain-num">3</span>
+        <div class="pain-content">
+            <h3>Too Many People, No One Organizes the Information</h3>
+            <p>Big projects have many teams, many rules, many changes. When the engineer cannot manage all this information, everything gets delayed. Delays cost millions.</p>
+            <span class="pain-tag tag-high">Big Problem</span>
+            <p class="val-note">Valeria confirms: Big problem in her area. She solves it by making clear lists, setting priorities, and sharing documents with all teams.</p>
+        </div>
+    </div>
+
+    <div class="pain-card">
+        <span class="pain-num">4</span>
+        <div class="pain-content">
+            <h3>Not Enough Good Professionals in Brazil</h3>
+            <p>Brazil is missing more than 230,000 qualified construction workers. It is the biggest shortage in 20 years. When you are reliable, you become very valuable.</p>
+            <span class="pain-tag tag-high">Big Problem</span>
+            <p class="val-note">Valeria confirms: Big problem. Reliable professionals are hard to find.</p>
+        </div>
+    </div>
+
+    <div class="pain-card">
+        <span class="pain-num">5</span>
+        <div class="pain-content">
+            <h3>Engineers Miss Deadlines</h3>
+            <p>Some engineers want everything perfect, so they never finish on time. They ask for all the data before starting, but miss the deadline. In the public bidding system, a missed deadline means a lost contract.</p>
+            <span class="pain-tag tag-medium">Medium-High</span>
+            <p class="val-note">Valeria confirms: It happens.</p>
+        </div>
+    </div>
+
+    <span class="page-num">4</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 5: THE SOLUTION -->
+<!-- ============================================================ -->
+<div class="page">
+    <p class="section-label">Part 3</p>
+    <h2>Our Solution:<br>O Checklist Estrutural</h2>
+    <div class="divider"></div>
+
+    <div class="guide">
+        <p><strong>What is this?</strong> Instead of saying "hire us," we give construction companies a free and useful tool: a checklist with 15 questions to ask any structural engineer before signing a contract. When they use this checklist, they will see that most engineers fail. Then they see that NU GUA created it. Then they contact you.</p>
+    </div>
+
+    <div class="solution-box">
+        <h3>15 Questions Smart Companies Ask<br>Before Hiring a Structural Engineer</h3>
+        <p class="sol-sub">Free PDF, bilingual PT/EN, takes 10 minutes to use</p>
+        <p>Every question on this list is something you already do well. The checklist is honest and useful. It helps people and makes them trust NU GUA at the same time.</p>
+    </div>
+
+    <div class="checklist-section">
+        <h4>Section 1: Documentation (6 questions)</h4>
+        <div class="checklist-item"><div class="check-box"></div>Do the drawings show all connections and joints?</div>
+        <div class="checklist-item"><div class="check-box"></div>Do the notes explain the loads, materials, and how things were calculated?</div>
+        <div class="checklist-item"><div class="check-box"></div>Is there a calculation report you can check?</div>
+        <div class="checklist-item"><div class="check-box"></div>Are the drawings aligned with the other project teams?</div>
+        <div class="checklist-item"><div class="check-box"></div>Can the construction team build from these drawings without guessing?</div>
+        <div class="checklist-item"><div class="check-box"></div>Is there a system to track changes and revisions?</div>
+    </div>
+
+    <div class="checklist-section">
+        <h4>Section 2: Deadlines (5 questions)</h4>
+        <div class="checklist-item"><div class="check-box"></div>Did the engineer give a real timeline before starting?</div>
+        <div class="checklist-item"><div class="check-box"></div>Will they deliver in parts, or everything at the end?</div>
+        <div class="checklist-item"><div class="check-box"></div>Do they tell you about delays before it is too late?</div>
+        <div class="checklist-item"><div class="check-box"></div>When you send late information, do they show you how it affects the schedule?</div>
+        <div class="checklist-item"><div class="check-box"></div>Do past clients say they met deadlines?</div>
+    </div>
+
+    <div class="checklist-section">
+        <h4>Section 3: How They Work (4 questions)</h4>
+        <div class="checklist-item"><div class="check-box"></div>Do they ask questions about the project, or just accept everything?</div>
+        <div class="checklist-item"><div class="check-box"></div>Will they join meetings and help make decisions?</div>
+        <div class="checklist-item"><div class="check-box"></div>Do they take responsibility, or blame whoever gave them the data?</div>
+        <div class="checklist-item"><div class="check-box"></div>After delivery, can you call them with questions during construction?</div>
+    </div>
+
+    <span class="page-num">5</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 6: THE FUNNEL & COPY -->
+<!-- ============================================================ -->
+<div class="page">
+    <p class="section-label">Part 4</p>
+    <h2>How People Find You<br>and Become Clients</h2>
+    <div class="divider"></div>
+
+    <div class="guide">
+        <p><strong>What is this?</strong> This shows the journey. A person sees your name on LinkedIn, gets interested, downloads the checklist, receives 3 emails, and then books a call with you. It is a step-by-step system. You do not chase anyone &mdash; they come to you.</p>
+    </div>
+
+    <div class="funnel-steps">
+        <div class="funnel-step">
+            <span class="f-num">1</span>
+            <span class="f-title">See</span>
+            <span class="f-desc">They see your LinkedIn post or get your email</span>
+        </div>
+        <div class="funnel-step">
+            <span class="f-num">2</span>
+            <span class="f-title">Click</span>
+            <span class="f-desc">They think "this is my problem" and visit the page</span>
+        </div>
+        <div class="funnel-step">
+            <span class="f-num">3</span>
+            <span class="f-title">Download</span>
+            <span class="f-desc">They give their email and get the checklist</span>
+        </div>
+        <div class="funnel-step">
+            <span class="f-num">4</span>
+            <span class="f-title">Trust</span>
+            <span class="f-desc">3 emails show them why NU GUA is different</span>
+        </div>
+        <div class="funnel-step">
+            <span class="f-num">5</span>
+            <span class="f-title">Call</span>
+            <span class="f-desc">They book a 15-min call about their project</span>
+        </div>
+    </div>
+
+    <div class="guide">
+        <p><strong>The words on the page:</strong> Below is the text people will see on the checklist landing page.</p>
+    </div>
+
+    <div class="copy-block">
+        <p class="copy-label">Main Title</p>
+        <p class="copy-text">Stop Losing Money on Structural Engineers Who Deliver Half the Work</p>
+    </div>
+
+    <div class="copy-block" style="margin-bottom: 20px;">
+        <p class="copy-label">Subtitle</p>
+        <p class="copy-text-sm">15 items smart construction companies check before signing a contract. Free checklist.</p>
+    </div>
+
+    <div class="guide">
+        <p><strong>The emails:</strong> After someone downloads the checklist, they get 3 automatic emails over 2 weeks. You do not write these &mdash; they are sent automatically.</p>
+    </div>
+
+    <div class="email-card">
+        <p class="email-num">Email 1 &mdash; Same day</p>
+        <p class="email-subject">Your Structural Checklist is here</p>
+        <p class="email-desc">Sends them the checklist. Gives one quick tip: "Start with question 12 &mdash; it is the fastest way to see if the engineer really cares."</p>
+    </div>
+    <div class="email-card">
+        <p class="email-num">Email 2 &mdash; 5 days later</p>
+        <p class="email-subject">Why incomplete projects cost 10x more than the discount on price</p>
+        <p class="email-desc">Shows the real cost of bad engineering. Makes them think about their own projects. Mentions how NU GUA works differently.</p>
+    </div>
+    <div class="email-card">
+        <p class="email-num">Email 3 &mdash; 12 days later</p>
+        <p class="email-subject">Next project? Let's talk.</p>
+        <p class="email-desc">A simple invitation: "Tell me one line about your next project. I will give you 15 minutes of my time."</p>
+    </div>
+
+    <span class="page-num">6</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 7: MARKETING CHANNELS -->
+<!-- ============================================================ -->
+<div class="page">
+    <p class="section-label">Part 5</p>
+    <h2>How We Reach People</h2>
+    <div class="divider"></div>
+
+    <div class="guide">
+        <p><strong>What is this?</strong> We use two simple ways to reach construction companies. No paid ads. No complicated tools. Just LinkedIn and email. Both are free. We know you have three jobs &mdash; so this is designed to take very little of your time.</p>
+    </div>
+
+    <div class="two-col">
+        <div class="col-box">
+            <h4>LinkedIn (Main Channel)</h4>
+            <ul>
+                <li>Post 2 times per week (I write them, you just post)</li>
+                <li>Best days: Tuesday and Thursday, 8am Brazil time</li>
+                <li>Simple text posts &mdash; no images needed</li>
+                <li>Topics: real problems from construction sites, your experience, the checklist</li>
+                <li>Also: comment on posts from construction companies you want to reach</li>
+            </ul>
+        </div>
+        <div class="col-box">
+            <h4>Direct Email (Second Channel)</h4>
+            <ul>
+                <li>Send 10 short emails per week to construction companies</li>
+                <li>We find companies from bid lists and public tender announcements</li>
+                <li>You send a short message offering the free checklist</li>
+                <li>We give you the message templates &mdash; you just change the name</li>
+                <li>Also works as LinkedIn direct messages</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="guide">
+        <p><strong>Why you have an advantage nobody else has:</strong> You work inside a construction company right now. You manage other engineers. You have lived the public bidding process from the inside. You know exactly what your future clients feel because you are living their world every day. When you write or talk about these problems, it is real. Not theory. That is very powerful.</p>
+    </div>
+
+    <div class="two-col">
+        <div class="col-box">
+            <h4>Who We Are Trying to Reach</h4>
+            <ul>
+                <li>Project managers at construction companies</li>
+                <li>Engineering directors who decide which engineer to hire</li>
+                <li>Architects who need a structural partner</li>
+                <li>Companies doing infrastructure projects in São Paulo and all of Brazil</li>
+            </ul>
+        </div>
+        <div class="col-box">
+            <h4>How These People Behave</h4>
+            <ul>
+                <li>They check LinkedIn during their commute or lunch</li>
+                <li>They care about real numbers, not marketing words</li>
+                <li>Their biggest fear: hiring the wrong engineer and losing a big contract</li>
+                <li>They are part of CREA groups and construction associations</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="solution-box">
+        <h3>Your time: 3 hours per week, maximum</h3>
+        <p style="margin-top: 8px;">Tuesday: read and post on LinkedIn (30 min). Thursday: read and post on LinkedIn (30 min). Any day: reply to messages and send outreach emails (1-2 hours). That is it.</p>
+    </div>
+
+    <span class="page-num">7</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 8: 90-DAY PLAN -->
+<!-- ============================================================ -->
+<div class="page">
+    <p class="section-label">Part 6</p>
+    <h2>The 90-Day Plan</h2>
+    <div class="divider"></div>
+
+    <div class="guide">
+        <p><strong>What is this?</strong> We do not try to do everything at once. This plan has 3 phases. Each month we do a little more. Month 1: get the first people interested. Month 2: more people see you. Month 3: turn interest into real clients.</p>
+    </div>
+
+    <div class="timeline-block">
+        <h4>Month 1: Start Simple</h4>
+        <p class="t-goal">Goal: 15 to 30 people download the checklist</p>
+        <ul>
+            <li>Finish the checklist PDF (we design it, you approve)</li>
+            <li>Connect the email system (free tool, we set it up)</li>
+            <li>Put the checklist page online</li>
+            <li>Write and post 8 LinkedIn posts</li>
+            <li>Send the checklist to 5 people you already know in construction</li>
+            <li>Send 20 emails to construction companies from bid lists</li>
+        </ul>
+    </div>
+
+    <div class="timeline-block">
+        <h4>Month 2: Grow Visibility</h4>
+        <p class="t-goal">Goal: 30 to 60 total people on your email list</p>
+        <ul>
+            <li>See which LinkedIn posts worked best &mdash; make more like those</li>
+            <li>Send 20 more emails to new companies</li>
+            <li>Comment on posts from people at construction companies</li>
+            <li>Ask people who used the checklist what they thought &mdash; use their words on the page</li>
+            <li>See who opened Email 3 (the call invitation) &mdash; those people are interested</li>
+        </ul>
+    </div>
+
+    <div class="timeline-block">
+        <h4>Month 3: Get Your First Clients</h4>
+        <p class="t-goal">Goal: 1 to 3 new clients from this system</p>
+        <ul>
+            <li>Contact everyone who showed interest in Email 3</li>
+            <li>Book 15-minute calls with interested people</li>
+            <li>Turn those conversations into real project bids</li>
+            <li>Ask happy leads to introduce you to other companies</li>
+            <li>Write a LinkedIn post about a successful project (with permission)</li>
+            <li>Look at the whole system: where do people stop? Fix that part.</li>
+        </ul>
+    </div>
+
+    <p class="section-label" style="margin-top: 12px;">How We Know It Is Working</p>
+    <div class="divider"></div>
+
+    <div class="kpi-row">
+        <div class="kpi">
+            <span class="kpi-num">5+/week</span>
+            <span class="kpi-label">People downloading the checklist</span>
+        </div>
+        <div class="kpi">
+            <span class="kpi-num">30%+</span>
+            <span class="kpi-label">People opening the call invitation email</span>
+        </div>
+        <div class="kpi">
+            <span class="kpi-num">1+/week</span>
+            <span class="kpi-label">Calls booked by month 3</span>
+        </div>
+    </div>
+
+    <span class="page-num">8</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 9: NEXT STEPS -->
+<!-- ============================================================ -->
+<div class="page">
+    <p class="section-label">Part 7</p>
+    <h2>What Happens Next</h2>
+    <div class="divider"></div>
+
+    <div class="guide">
+        <p><strong>What is this?</strong> A clear list of who does what. Some things I do for you. Some things only you can do. Each task has a deadline so we stay on track.</p>
+    </div>
+
+    <div class="next-step">
+        <span class="ns-who alexis">Alexis</span>
+        <span class="ns-task">Design the checklist PDF (bilingual, with NU GUA brand)</span>
+        <span class="ns-date">This week</span>
+    </div>
+    <div class="next-step">
+        <span class="ns-who alexis">Alexis</span>
+        <span class="ns-task">Set up the email system and connect it to the website</span>
+        <span class="ns-date">This week</span>
+    </div>
+    <div class="next-step">
+        <span class="ns-who alexis">Alexis</span>
+        <span class="ns-task">Put the website and checklist page online</span>
+        <span class="ns-date">This week</span>
+    </div>
+    <div class="next-step">
+        <span class="ns-who alexis">Alexis</span>
+        <span class="ns-task">Write the first 4 LinkedIn posts for you to review</span>
+        <span class="ns-date">This week</span>
+    </div>
+    <div class="next-step">
+        <span class="ns-who">Valeria</span>
+        <span class="ns-task">Send 5 photos of your best projects + a short description of each</span>
+        <span class="ns-date">By Friday</span>
+    </div>
+    <div class="next-step">
+        <span class="ns-who">Valeria</span>
+        <span class="ns-task">Record a 2-minute voice message about yourself (I will write the text)</span>
+        <span class="ns-date">By Friday</span>
+    </div>
+    <div class="next-step">
+        <span class="ns-who">Valeria</span>
+        <span class="ns-task">Choose a domain name for the website (example: nugua.com.br)</span>
+        <span class="ns-date">Today</span>
+    </div>
+    <div class="next-step">
+        <span class="ns-who">Valeria</span>
+        <span class="ns-task">Create a free account on ConvertKit (email tool &mdash; takes 5 minutes)</span>
+        <span class="ns-date">By Wednesday</span>
+    </div>
+    <div class="next-step">
+        <span class="ns-who">Valeria</span>
+        <span class="ns-task">Tell me Sergio's job title and one sentence about him</span>
+        <span class="ns-date">By Friday</span>
+    </div>
+
+    <div class="guide" style="margin-top: 24px;">
+        <p><strong>Remember:</strong> You do not need to be a marketing expert. You do not need to write posts or design anything. I handle all of that. You just need to be yourself, share your real experience, and show up for the people who reach out. That is what makes this work.</p>
+    </div>
+
+    <span class="page-num">9</span>
+</div>
+
+</body>
+</html>
